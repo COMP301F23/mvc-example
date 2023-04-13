@@ -3,6 +3,8 @@ package com.comp301.lec20.playlist.view;
 import com.comp301.lec20.playlist.controller.Controller;
 import com.comp301.lec20.playlist.model.Song;
 import javafx.event.ActionEvent;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -20,7 +22,10 @@ public class SongView implements FXComponent {
   @Override
   public Parent render() {
     HBox layout = new HBox();
-    layout.getStyleClass().add("song-layout");
+    layout.setAlignment(Pos.CENTER_LEFT);
+    layout.setSpacing(5);
+    layout.setPadding(new Insets(5, 5, 5, 5));
+    layout.setStyle("-fx-border-color: #888888");
 
     // Delete button
     Button deleteButton = new Button("\u274C");

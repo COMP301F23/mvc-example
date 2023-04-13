@@ -1,7 +1,11 @@
 package com.comp301.lec20.playlist.view;
 
 import com.comp301.lec20.playlist.controller.Controller;
+import com.comp301.lec20.playlist.model.Song;
+import com.comp301.lec20.playlist.model.SongImpl;
 import javafx.event.ActionEvent;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -24,7 +28,9 @@ public class AddSongView implements FXComponent {
     }
 
     layout = new HBox();
-    layout.getStyleClass().add("add-song-layout");
+    layout.setSpacing(5);
+    layout.setPadding(new Insets(10, 10, 10, 10));
+    layout.setAlignment(Pos.CENTER);
 
     // Title
     TextField titleInput = new TextField();
@@ -38,7 +44,12 @@ public class AddSongView implements FXComponent {
 
     // Rating
     Slider ratingSlider = new Slider(0, 5, 5);
-    ratingSlider.getStyleClass().add("add-song-slider");
+    ratingSlider.setShowTickMarks(true);
+    ratingSlider.setShowTickLabels(true);
+    ratingSlider.setMinorTickCount(0);
+    ratingSlider.setMajorTickUnit(1);
+    ratingSlider.setBlockIncrement(1);
+    ratingSlider.setSnapToTicks(true);
     layout.getChildren().add(new Label("Rating:"));
     layout.getChildren().add(ratingSlider);
 
