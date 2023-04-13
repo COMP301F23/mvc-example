@@ -76,7 +76,7 @@
         <artifactId>javafx-maven-plugin</artifactId>
         <version>0.0.5</version>
         <configuration>
-          <mainClass>com.comp301.lec20.playlist.Main</mainClass>
+          <mainClass>com.comp301.lec20.inclass.Main</mainClass>
         </configuration>
       </plugin>
     </plugins>
