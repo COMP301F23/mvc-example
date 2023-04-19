@@ -3,6 +3,7 @@ package com.comp301.lec20.inclass.view;
 import com.comp301.lec20.inclass.controller.Controller;
 import com.comp301.lec20.inclass.model.Song;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -23,14 +24,23 @@ public class SongView {
         // Delete button
         Button deleteButton = new Button("\u274C");
         layout.getChildren().add(deleteButton);
+        deleteButton.setOnAction((ActionEvent actionEvent) -> {
+                controller.deleteSong(index);
+        });
 
         // Up button
         Button upButton = new Button("\u25B2");
         layout.getChildren().add(upButton);
+        upButton.setOnAction((ActionEvent actionEvent) -> {
+            controller.moveSongUp(index);
+        });
 
         // Down button
         Button downButton = new Button("\u25BC");
         layout.getChildren().add(downButton);
+        downButton.setOnAction((ActionEvent actionEvent) -> {
+            controller.moveSongDown(index);
+        });
 
         // Title
         Label title = new Label(makeLabelString());

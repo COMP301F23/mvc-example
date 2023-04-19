@@ -1,6 +1,7 @@
 package com.comp301.lec20.inclass.model;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class PlaylistImpl implements Playlist {
@@ -50,6 +51,11 @@ public class PlaylistImpl implements Playlist {
     @Override
     public void removeObserver(PlaylistObserver observer) {
         observers.remove(observer);
+    }
+
+    public void shuffle() {
+        Collections.shuffle(playlist);
+        notifyObservers();
     }
 
     private void notifyObservers() {

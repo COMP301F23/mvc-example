@@ -21,12 +21,11 @@ public class Main extends Application {
 
         Playlist playlist = new PlaylistImpl();
         Controller controller = new ControllerImpl(playlist);
-        View view = new View(controller);
+        View view = new View(controller, stage);
 
         stage.setTitle("Playlist View Example");
 
-        Scene scene = new Scene(view.render());
-        stage.setScene(scene);
+        view.update(playlist);
 
         // Show the stage
         stage.show();

@@ -34,6 +34,7 @@ public class AddSongView {
         Slider ratingSlider = new Slider(0, 5, 5);
         layout.getChildren().add(new Label("Rating:"));
         layout.getChildren().add(ratingSlider);
+        ratingSlider.getStyleClass().add("add-song-slider");
 
         // Add button
         Button addButton = new Button("\uff0b");
