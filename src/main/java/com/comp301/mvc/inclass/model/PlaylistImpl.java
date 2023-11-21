@@ -1,6 +1,7 @@
 package com.comp301.mvc.inclass.model;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class PlaylistImpl implements Playlist {
@@ -35,6 +36,11 @@ public class PlaylistImpl implements Playlist {
     public void addSong(Song song, int index) {
         playlist.add(index, song);
 
+        notifyObservers();
+    }
+
+    public void shuffle() {
+        Collections.shuffle(playlist);
         notifyObservers();
     }
 

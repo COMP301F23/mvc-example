@@ -20,6 +20,7 @@ public class SongView implements FXComponent {
     public SongView(Song song, int song_index, Controller controller) {
         this.song = song;
         this.controller = controller;
+        this.song_index = song_index;
     }
 
     public Parent render() {
@@ -28,6 +29,7 @@ public class SongView implements FXComponent {
         deleteButton.setOnAction((ActionEvent e) -> {
             controller.deleteSong(song_index);
         });
+
         Button upButton = new Button("\u25B2");
         upButton.setOnAction((ActionEvent e) -> {
             controller.moveSongUp(song_index);
